@@ -1,0 +1,15 @@
+export const imgExample = [
+    'https://i.waifu.pics/zOJvcV5.jpg',
+    'https://i.waifu.pics/qPWyHQ0.png',
+    'https://i.waifu.pics/7O7N6UP.png',
+    'https://i.waifu.pics/h_3GteW.png',
+    'https://i.waifu.pics/gnpc_Lr.jpeg',
+    'https://i.waifu.pics/3x~ovC6.jpg',
+    'https://i.waifu.pics/9seL-Rc.jpg',
+    'https://i.waifu.pics/-eOx7uI.jpg',
+    'https://i.waifu.pics/HjkIsP1.png',
+    'https://i.waifu.pics/B_Sy4E_.png',
+    'https://i.waifu.pics/EyNE0NL.jpg',
+    'https://i.waifu.pics/tE7-FfJ.jpg',
+    'https://i.waifu.pics/~FptP42.jpeg',
+]
