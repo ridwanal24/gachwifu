@@ -58,53 +58,55 @@ function changeCurrentImg(data) {}
 </script>
 
 <template>
-  <div class="mt-2 text-center">
-    <button
-      class="inline-block rounded-tl-md rounded-tr-md p-2 px-5 mx-2"
-      :class="{
-        'bg-white': currentPage == 'roll',
-        'text-gray-900': currentPage == 'roll',
-        'text-white': currentPage != 'roll',
-        'bg-gray-400': currentPage != 'roll',
-        'hover:bg-gray-500': currentPage != 'roll',
-      }"
-      @click="currentPage = 'roll'"
-    >
-      Roll
-    </button>
-    <button
-      class="inline-block rounded-tl-md rounded-tr-md p-2"
-      :class="{
-        'bg-white': currentPage == 'gallery',
-        'text-gray-900': currentPage == 'gallery',
-        'text-white': currentPage != 'gallery',
-        'bg-gray-400': currentPage != 'gallery',
-        'hover:bg-gray-500': currentPage != 'gallery',
-      }"
-      @click="currentPage = 'gallery'"
-    >
-      Gallery
-    </button>
+  <div class="contener min-h-screen">
+    <div class="mt-2 text-center">
+      <button
+        class="inline-block rounded-tl-md rounded-tr-md p-2 px-5 mx-2"
+        :class="{
+          'bg-white': currentPage == 'roll',
+          'text-gray-900': currentPage == 'roll',
+          'text-white': currentPage != 'roll',
+          'bg-gray-400': currentPage != 'roll',
+          'hover:bg-gray-500': currentPage != 'roll',
+        }"
+        @click="currentPage = 'roll'"
+      >
+        Roll
+      </button>
+      <button
+        class="inline-block rounded-tl-md rounded-tr-md p-2"
+        :class="{
+          'bg-white': currentPage == 'gallery',
+          'text-gray-900': currentPage == 'gallery',
+          'text-white': currentPage != 'gallery',
+          'bg-gray-400': currentPage != 'gallery',
+          'hover:bg-gray-500': currentPage != 'gallery',
+        }"
+        @click="currentPage = 'gallery'"
+      >
+        Gallery
+      </button>
+    </div>
+
+    <RollImage
+      :changeIsAddedToGallery="changeIsAddedToGallery"
+      :addToGallery="addToGallery"
+      :removeFromGallery="removeFromGallery"
+      :imageList="imageList"
+      :isAddedToGallery="isAddedToGallery"
+      :currentImg="currentImg"
+      :class="{ hidden: currentPage != 'roll' }"
+    />
+
+    <Gallery
+      :changeCurrentImg="changeCurrentImg"
+      :currentImg="currentImg"
+      :addToGallery="addToGallery"
+      :removeFromGallery="removeFromGallery"
+      :imageList="imageList"
+      :class="{ hidden: currentPage != 'gallery' }"
+    />
   </div>
-
-  <RollImage
-    :changeIsAddedToGallery="changeIsAddedToGallery"
-    :addToGallery="addToGallery"
-    :removeFromGallery="removeFromGallery"
-    :imageList="imageList"
-    :isAddedToGallery="isAddedToGallery"
-    :currentImg="currentImg"
-    :class="{ hidden: currentPage != 'roll' }"
-  />
-
-  <Gallery
-    :changeCurrentImg="changeCurrentImg"
-    :currentImg="currentImg"
-    :addToGallery="addToGallery"
-    :removeFromGallery="removeFromGallery"
-    :imageList="imageList"
-    :class="{ hidden: currentPage != 'gallery' }"
-  />
   <div class="mt-8 py-4 bg-gray-900 italic text-center">
     <p class="text-white">
       Created by

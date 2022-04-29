@@ -51,7 +51,7 @@ function isImageListEmpty() {
       </div>
       <img
         :src="galleryEmpty"
-        class="mx-auto my-60"
+        class="mx-auto my-10"
         :class="{ hidden: !isImageListEmpty() }"
         alt=""
       />
